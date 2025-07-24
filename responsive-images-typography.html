@@ -91,31 +91,119 @@ img {
 </ul>
 
 <h4 style="color: #4d1979; font-size: 1.1em; margin-top: 1rem; margin-bottom: 0.5rem;">Enhanced Images for Feature Cards</h4>
-<p>For gallery and feature card images, add this for better control:</p>
+<p>For gallery and feature card images, create consistent thumbnails for better visual harmony:</p>
 
 <div class="code-container">
 <button class="copy-button" onclick="copyCode(this)">Copy</button>
-<pre style="background-color: #f5f5f5; padding: 1rem; border-radius: 3px; font-family: monospace; font-size: 0.9em; overflow-x: auto;"><code>/* Enhanced styling for feature cards and galleries */
-.features img, .gallery img {
+<pre style="background-color: #f5f5f5; padding: 1rem; border-radius: 3px; font-family: monospace; font-size: 0.9em; overflow-x: auto;"><code>/* Consistent square thumbnails - recommended approach */
+.feature-thumbnail, .gallery-thumbnail {
     width: 100%;
-    height: 150px;
+    aspect-ratio: 1 / 1; /* Creates perfect squares */
     object-fit: cover;
     border-radius: 5px;
 }
 
-/* Larger images on desktop */
-@media (min-width: 768px) {
-    .gallery img {
-        height: 200px;
+/* Alternative for older browsers */
+.feature-thumbnail, .gallery-thumbnail {
+    width: 100%;
+    height: 200px; /* Fixed height for consistency */
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+/* Responsive sizing */
+@media (max-width: 480px) {
+    .feature-thumbnail, .gallery-thumbnail {
+        height: 150px;
     }
 }</code></pre>
 </div>
 
+<h4 style="color: #4d1979; font-size: 1.1em; margin-top: 1rem; margin-bottom: 0.5rem;">Why Consistent Thumbnails Matter</h4>
+<p><strong>Benefits of uniform thumbnail sizes:</strong></p>
+<ul style="margin: 1rem 0; padding-left: 1.5rem;">
+<li><strong>Predictable layouts:</strong> No more broken grids from different image sizes</li>
+<li><strong>Better visual harmony:</strong> Creates clean, professional appearance</li>
+<li><strong>Easier responsive design:</strong> Consistent behavior across all screen sizes</li>
+<li><strong>Improved loading performance:</strong> Browser can calculate layout immediately</li>
+</ul>
+
+<div style="background-color: #fff3cd; padding: 1rem; border-left: 4px solid #ffc107; margin: 1rem 0;">
+<h3 style="color: #856404; font-size: 1.1em; margin-top: 0; margin-bottom: 0.5rem;">💡 Pro Tip: Thumbnail Strategy</h3>
+<p style="margin: 0.5rem 0;">Instead of using images with different aspect ratios (rectangular, square, wide), create consistent square thumbnails. This eliminates layout shifts and creates a more polished, professional appearance.</p>
+</div>
+
+<h4 style="color: #4d1979; font-size: 1.1em; margin-top: 1rem; margin-bottom: 0.5rem;">HTML Updates for Thumbnails</h4>
+<p>Add CSS classes to your images for better control:</p>
+
+<div class="code-container">
+<button class="copy-button" onclick="copyCode(this)">Copy</button>
+<pre style="background-color: #f5f5f5; padding: 1rem; border-radius: 3px; font-family: monospace; font-size: 0.9em; overflow-x: auto;"><code>&lt;!-- Update your HTML to use thumbnail classes --&gt;
+&lt;div class="features"&gt;
+  &lt;a href="page.html" class="feature-link"&gt;
+    &lt;div&gt;
+      &lt;img src="images/photo.jpg" class="feature-thumbnail" alt="Description"&gt;
+      &lt;h3&gt;Feature Title&lt;/h3&gt;
+    &lt;/div&gt;
+  &lt;/a&gt;
+&lt;/div&gt;
+
+&lt;div class="gallery"&gt;
+  &lt;div&gt;&lt;img src="images/gallery1.jpg" class="gallery-thumbnail" alt="Gallery item"&gt;&lt;/div&gt;
+  &lt;div&gt;&lt;img src="images/gallery2.jpg" class="gallery-thumbnail" alt="Gallery item"&gt;&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+</div>
+
+<div style="background-color: #e7f3ff; padding: 1rem; border-left: 4px solid #2196f3; margin: 1rem 0;">
+<h3 style="color: #1976d2; font-size: 1.1em; margin-top: 0; margin-bottom: 0.5rem;">⚠️ Important: Replace Inline Width Attributes</h3>
+<p style="margin: 0.5rem 0;">If your images currently use <code style="background-color: #f5f5f5; padding: 2px 4px; border-radius: 3px; font-family: monospace;">width="100%"</code> attributes in the HTML, replace them with CSS classes for better control and consistency.</p>
+
+<div class="code-container">
+<button class="copy-button" onclick="copyCode(this)">Copy</button>
+<pre style="background-color: #f5f5f5; padding: 1rem; border-radius: 3px; font-family: monospace; font-size: 0.9em; overflow-x: auto;"><code>&lt;!-- BEFORE: Using inline width (avoid this) --&gt;
+&lt;img src="images/photo.jpg" width="100%" alt="Description"&gt;
+
+&lt;!-- AFTER: Using CSS class (recommended) --&gt;
+&lt;img src="images/photo.jpg" class="feature-thumbnail" alt="Description"&gt;</code></pre>
+</div>
+</div>
+
+<h4 style="color: #4d1979; font-size: 1.1em; margin-top: 1rem; margin-bottom: 0.5rem;">Quick Thumbnail Creation Tools</h4>
+<p>Need to create consistent square thumbnails? Use these free online tools:</p>
+
+<div style="background-color: #f8f9fa; padding: 1rem; border-left: 4px solid #28a745; margin: 1rem 0;">
+<h3 style="color: #155724; font-size: 1.1em; margin-top: 0; margin-bottom: 0.5rem;">🛠️ Free Thumbnail Tools</h3>
+
+<p><strong>For Quick Resizing & Cropping:</strong></p>
+<ul style="margin: 0.5rem 0; padding-left: 1.5rem;">
+<li><strong><a href="https://canva.com" target="_blank">Canva</a></strong> - Create custom 300x300px designs, crop existing images</li>
+<li><strong><a href="https://photopea.com" target="_blank">Photopea</a></strong> - Free Photoshop alternative in your browser</li>
+<li><strong><a href="https://squoosh.app" target="_blank">Squoosh</a></strong> - Google's image optimizer with cropping tools</li>
+<li><strong><a href="https://remove.bg" target="_blank">Remove.bg</a></strong> - Remove backgrounds, then add to square canvas</li>
+</ul>
+
+<p><strong>For Batch Processing:</strong></p>
+<ul style="margin: 0.5rem 0; padding-left: 1.5rem;">
+<li><strong><a href="https://iloveimg.com/resize-image" target="_blank">iLoveIMG</a></strong> - Resize multiple images to same dimensions</li>
+<li><strong><a href="https://tinypng.com" target="_blank">TinyPNG</a></strong> - Compress images after resizing</li>
+</ul>
+
+<p><strong>Quick Process:</strong></p>
+<ol style="margin: 0.5rem 0; padding-left: 1.5rem;">
+<li>Upload your image to Canva</li>
+<li>Choose "Custom size" → 300 x 300 pixels</li>
+<li>Crop and position your image to fit the square</li>
+<li>Download as JPG or PNG</li>
+<li>Use for all your feature cards!</li>
+</ol>
+</div>
+
 <p><strong>Why <code style="background-color: #f5f5f5; padding: 2px 4px; border-radius: 3px; font-family: monospace;">object-fit: cover</code>?</strong></p>
 <ul style="margin: 1rem 0; padding-left: 1.5rem;">
-<li>Keeps aspect ratio while filling the space</li>
+<li>Maintains image quality while fitting the thumbnail size</li>
 <li>Prevents stretched or squished images</li>
-<li>Creates uniform card heights</li>
+<li>Creates uniform card heights and consistent grids</li>
+<li>Crops images intelligently to show the most important parts</li>
 </ul>
 
 <h3 style="color: #4d1979; font-size: 1.2em; margin-top: 1.5rem; margin-bottom: 1rem;">Part 2: Fluid Typography</h3>
