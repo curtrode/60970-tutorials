@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html><head> 
+<link rel="stylesheet" href="https://templates.lcs.brightspace.com/lib/assets/css/styles.min.css"> 
+<style>
+/* Copy button styles */
+.code-container {
+  position: relative;
+  margin: 1rem 0;
+}
+
+.copy-button {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: #007bff;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 500;
+  z-index: 10;
+  transition: all 0.2s ease;
+}
+
+.copy-button:hover {
+  background: #0056b3;
+  transform: translateY(-1px);
+}
+
+.copy-button.copied {
+  background: #28a745;
+}
+
+/* Make sure code blocks have proper positioning */
+pre {
+  position: relative;
+  background-color: #f5f5f5 !important;
+  padding: 1rem !important;
+  border-radius: 3px !important;
+  font-family: monospace !important;
+  font-size: 0.9em !important;
+  overflow-x: auto !important;
+  margin: 1rem 0 !important;
+}
+</style>
+</head><body style="color: rgb(32, 33, 34); font-family: arial, helvetica, sans-serif; font-size: 12px;"><div style="font-family: Arial, sans-serif; line-height: 1.6; color: #333; max-width: 100%; margin: 0; padding: 1rem; background-color: #ffffff;">
+
+<h2 style="color: #4d1979; font-size: 1.3em; margin-top: 1.5rem; margin-bottom: 1rem;">Tutorial 2: Responsive Images</h2>
+
+<h3 style="color: #4d1979; font-size: 1.2em; margin-top: 1.5rem; margin-bottom: 1rem;">Overview</h3>
+<p>Master the art of responsive images. Learn how to make images that look perfect on any device, create consistent thumbnails, and optimize for performance.</p>
+
+<h3 style="color: #4d1979; font-size: 1.2em; margin-top: 1.5rem; margin-bottom: 1rem;">Learning Objectives</h3>
+<p>By the end of this tutorial, you will be able to:</p>
+<ul style="margin: 1rem 0; padding-left: 1.5rem;">
+<li>Make images automatically resize for different screens</li>
+<li>Create consistent square thumbnails for feature cards</li>
+<li>Replace inline width attributes with CSS classes</li>
+<li>Use free tools to quickly create professional thumbnails</li>
+<li>Optimize images for better performance</li>
+</ul>
+
+<div style="background-color: #f9f9f9; padding: 1rem; border-left: 4px solid #2196f3; margin: 1rem 0;">
+<h3 style="color: #1976d2; font-size: 1.1em; margin-top: 0; margin-bottom: 0.5rem;">What You Need</h3>
+<ul style="margin: 0.5rem 0; padding-left: 1.5rem;">
+<li>Your existing website with images</li>
+<li>A text editor and web browser</li>
+<li>Basic knowledge of HTML and CSS</li>
+</ul>
+</div>
+
+<h3 style="color: #4d1979; font-size: 1.2em; margin-top: 1.5rem; margin-bottom: 1rem;">Step 1: The Essential Rule</h3>
+<p>Add this to your CSS to make ALL images responsive:</p>
+
+<div class="code-container">
+<button class="copy-button" onclick="copyCode(this)">Copy</button>
+<pre style="background-color: #f5f5f5; padding: 1rem; border-radius: 3px; font-family: monospace; font-size: 0.9em; overflow-x: auto;"><code>/* Make all images responsive by default */
+img {
+    max-width: 100%;
+    height: auto;
+}</code></pre>
+</div>
+
+<p><strong>What this does:</strong></p>
+<ul style="margin: 1rem 0; padding-left: 1.5rem;">
+<li><code style="background-color: #f5f5f5; padding: 2px 4px; border-radius: 3px; font-family: monospace;">max-width: 100%</code> - Image never gets wider than its container</li>
+<li><code style="background-color: #f5f5f5; padding: 2px 4px; border-radius: 3px; font-family: monospace;">height: auto</code> - Height adjusts automatically to keep proportions</li>
+</ul>
+
+<h3 style="color: #4d1979; font-size: 1.2em; margin-top: 1.5rem; margin-bottom: 1rem;">Step 2: Create Consistent Thumbnails</h3>
+<p>For gallery and feature card images, create consistent thumbnails for better visual harmony:</p>
+
+<div class="code-container">
+<button class="copy-button" onclick="copyCode(this)">Copy</button>
+<pre style="background-color: #f5f5f5; padding: 1rem; border-radius: 3px; font-family: monospace; font-size: 0.9em; overflow-x: auto;"><code>/* Consistent square thumbnails - recommended approach */
+.feature-thumbnail, .gallery-thumbnail {
+    width: 100%;
+    aspect-ratio: 1 / 1; /* Creates perfect squares */
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+/* Alternative for older browsers */
+.feature-thumbnail, .gallery-thumbnail {
+    width: 100%;
+    height: 200px; /* Fixed height for consistency */
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+/* Responsive sizing */
+@media (max-width: 480px) {
+    .feature-thumbnail, .gallery-thumbnail {
+        height: 150px;
+    }
+}</code></pre>
+</div>
+
+<h4 style="color: #4d1979; font-size: 1.1em; margin-top: 1rem; margin-bottom: 0.5rem;">Why Consistent Thumbnails Matter</h4>
+<p><strong>Benefits of uniform thumbnail sizes:</strong></p>
+<ul style="margin: 1rem 0; padding-left: 1.5rem;">
+<li><strong>Predictable layouts:</strong> No more broken grids from different image sizes</li>
+<li><strong>Better visual harmony:</strong> Creates clean, professional appearance</li>
+<li><strong>Easier responsive design:</strong> Consistent behavior across all screen sizes</li>
+<li><strong>Improved loading performance:</strong> Browser can calculate layout immediately</li>
+</ul>
+
+<div style="background-color: #fff3cd; padding: 1rem; border-left: 4px solid #ffc107; margin: 1rem 0;">
+<h3 style="color: #856404; font-size: 1.1em; margin-top: 0; margin-bottom: 0.5rem;">💡 Pro Tip: Thumbnail Strategy</h3>
+<p style="margin: 0.5rem 0;">Instead of using images with different aspect ratios (rectangular, square, wide), create consistent square thumbnails. This eliminates layout shifts and creates a more polished, professional appearance.</p>
+</div>
+
+<h3 style="color: #4d1979; font-size: 1.2em; margin-top: 1.5rem; margin-bottom: 1rem;">Step 3: Update Your HTML</h3>
+<p>Add CSS classes to your images for better control:</p>
+
+<div class="code-container">
+<button class="copy-button" onclick="copyCode(this)">Copy</button>
+<pre style="background-color: #f5f5f5; padding: 1rem; border-radius: 3px; font-family: monospace; font-size: 0.9em; overflow-x: auto;"><code>&lt;!-- Update your HTML to use thumbnail classes --&gt;
+&lt;div class="features"&gt;
+  &lt;a href="page.html" class="feature-link"&gt;
+    &lt;div&gt;
+      &lt;img src="images/photo.jpg" class="feature-thumbnail" alt="Description"&gt;
+      &lt;h3&gt;Feature Title&lt;/h3&gt;
+    &lt;/div&gt;
+  &lt;/a&gt;
+&lt;/div&gt;
+
+&lt;div class="gallery"&gt;
+  &lt;div&gt;&lt;img src="images/gallery1.jpg" class="gallery-thumbnail" alt="Gallery item"&gt;&lt;/div&gt;
+  &lt;div&gt;&lt;img src="images/gallery2.jpg" class="gallery-thumbnail" alt="Gallery item"&gt;&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+</div>
+
+<div style="background-color: #e7f3ff; padding: 1rem; border-left: 4px solid #2196f3; margin: 1rem 0;">
+<h3 style="color: #1976d2; font-size: 1.1em; margin-top: 0; margin-bottom: 0.5rem;">⚠️ Important: Replace Inline Width Attributes</h3>
+<p style="margin: 0.5rem 0;">If your images currently use <code style="background-color: #f5f5f5; padding: 2px 4px; border-radius: 3px; font-family: monospace;">width="100%"</code> attributes in the HTML, replace them with CSS classes for better control and consistency.</p>
+
+<div class="code-container">
+<button class="copy-button" onclick="copyCode(this)">Copy</button>
+<pre style="background-color: #f5f5f5; padding: 1rem; border-radius: 3px; font-family: monospace; font-size: 0.9em; overflow-x: auto;"><code>&lt;!-- BEFORE: Using inline width (avoid this) --&gt;
+&lt;img src="images/photo.jpg" width="100%" alt="Description"&gt;
+
+&lt;!-- AFTER: Using CSS class (recommended) --&gt;
+&lt;img src="images/photo.jpg" class="feature-thumbnail" alt="Description"&gt;</code></pre>
+</div>
+</div>
+
+<h3 style="color: #4d1979; font-size: 1.2em; margin-top: 1.5rem; margin-bottom: 1rem;">Step 4: Design Clean Feature Cards</h3>
+<p>For navigation cards, focus on clean imagery without distracting text content:</p>
+
+<div style="background-color: #fff3cd; padding: 1rem; border-left: 4px solid #ffc107; margin: 1rem 0;">
+<h3 style="color: #856404; font-size: 1.1em; margin-top: 0; margin-bottom: 0.5rem;">🎨 Feature Card Best Practice</h3>
+<p style="margin: 0.5rem 0;">Remove essay snippets from feature boxes to create cleaner navigation cards. Keep only image + title for focused user experience.</p>
+</div>
+
+<h4 style="color: #4d1979; font-size: 1.1em; margin-top: 1rem; margin-bottom: 0.5rem;">Content Simplification</h4>
+
+<div class="code-container">
+<button class="copy-button" onclick="copyCode(this)">Copy</button>
+<pre style="background-color: #f5f5f5; padding: 1rem; border-radius: 3px; font-family: monospace; font-size: 0.9em; overflow-x: auto;"><code>&lt;!-- BEFORE: Cluttered with text snippets --&gt;
+&lt;div&gt;
+    &lt;img src="images/thumbs/joplin_thumb.png" class="feature-thumbnail" alt="Jazz score"&gt;
+    &lt;h2&gt;Jazz &amp; Understanding&lt;/h2&gt;
+    &lt;p&gt;How jazz began to make more sense after Todd's death...&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;!-- AFTER: Clean navigation card --&gt;
+&lt;div&gt;
+    &lt;img src="images/thumbs/joplin_thumb.png" class="feature-thumbnail" alt="Jazz score"&gt;
+    &lt;h2&gt;Jazz &amp; Understanding&lt;/h2&gt;
+&lt;/div&gt;</code></pre>
+</div>
+
+<h4 style="color: #4d1979; font-size: 1.1em; margin-top: 1rem; margin-bottom: 0.5rem;">Typography Spacing</h4>
+<p>Add proper spacing to feature headings:</p>
+
+<div class="code-container">
+<button class="copy-button" onclick="copyCode(this)">Copy</button>
+<pre style="background-color: #f5f5f5; padding: 1rem; border-radius: 3px; font-family: monospace; font-size: 0.9em; overflow-x: auto;"><code>/* Feature card typography */
+.features h2 {
+    margin-top: 15px;
+    font-size: clamp(1.1rem, 2vw, 1.5rem);
+}</code></pre>
+</div>
+
+<h3 style="color: #4d1979; font-size: 1.2em; margin-top: 1.5rem; margin-bottom: 1rem;">Step 5: Create Thumbnails with Free Tools</h3>
+<p>Need to create consistent square thumbnails? Use these free online tools:</p>
+
+<div style="background-color: #f8f9fa; padding: 1rem; border-left: 4px solid #28a745; margin: 1rem 0;">
+<h3 style="color: #155724; font-size: 1.1em; margin-top: 0; margin-bottom: 0.5rem;">🛠️ Free Thumbnail Tools</h3>
+
+<p><strong>For Quick Resizing & Cropping:</strong></p>
+<ul style="margin: 0.5rem 0; padding-left: 1.5rem;">
+<li><strong><a href="https://canva.com" target="_blank">Canva</a></strong> - Create custom 300x300px designs, crop existing images</li>
+<li><strong><a href="https://photopea.com" target="_blank">Photopea</a></strong> - Free Photoshop alternative in your browser</li>
+<li><strong><a href="https://squoosh.app" target="_blank">Squoosh</a></strong> - Google's image optimizer with cropping tools</li>
+<li><strong><a href="https://remove.bg" target="_blank">Remove.bg</a></strong> - Remove backgrounds, then add to square canvas</li>
+</ul>
+
+<p><strong>For Batch Processing:</strong></p>
+<ul style="margin: 0.5rem 0; padding-left: 1.5rem;">
+<li><strong><a href="https://iloveimg.com/resize-image" target="_blank">iLoveIMG</a></strong> - Resize multiple images to same dimensions</li>
+<li><strong><a href="https://tinypng.com" target="_blank">TinyPNG</a></strong> - Compress images after resizing</li>
+</ul>
+
+<p><strong>Quick Process:</strong></p>
+<ol style="margin: 0.5rem 0; padding-left: 1.5rem;">
+<li>Upload your image to Canva</li>
+<li>Choose "Custom size" → 300 x 300 pixels</li>
+<li>Crop and position your image to fit the square</li>
+<li>Download as JPG or PNG</li>
+<li>Use for all your feature cards!</li>
+</ol>
+</div>
+
+<p><strong>Why <code style="background-color: #f5f5f5; padding: 2px 4px; border-radius: 3px; font-family: monospace;">object-fit: cover</code>?</strong></p>
+<ul style="margin: 1rem 0; padding-left: 1.5rem;">
+<li>Maintains image quality while fitting the thumbnail size</li>
+<li>Prevents stretched or squished images</li>
+<li>Creates uniform card heights and consistent grids</li>
+<li>Crops images intelligently to show the most important parts</li>
+</ul>
+
+<h3 style="color: #4d1979; font-size: 1.2em; margin-top: 1.5rem; margin-bottom: 1rem;">Step 6: Modern Image Layout for Content Pages</h3>
+<p>For content-rich pages (like article/essay pages), use a modern approach that places images between paragraphs as natural breaks in the reading flow.</p>
+
+<h4 style="color: #4d1979; font-size: 1.1em; margin-top: 1rem; margin-bottom: 0.5rem;">The Problem with Old Approaches</h4>
+<p>Avoid these outdated techniques:</p>
+<ul style="margin: 1rem 0; padding-left: 1.5rem;">
+<li><strong>CSS Floats:</strong> Require manual clearing, poor mobile experience</li>
+<li><strong>Complex Grid Layouts:</strong> Over-engineered, hard to maintain</li>
+<li><strong>Side-by-side text/image:</strong> Breaks responsive design</li>
+</ul>
+
+<h4 style="color: #4d1979; font-size: 1.1em; margin-top: 1rem; margin-bottom: 0.5rem;">Modern Solution: Images Between Paragraphs</h4>
+<p>Place images as natural breaks between content sections for better storytelling and responsive behavior.</p>
+
+<div class="code-container">
+<button class="copy-button" onclick="copyCode(this)">Copy</button>
+<pre style="background-color: #f5f5f5; padding: 1rem; border-radius: 3px; font-family: monospace; font-size: 0.9em; overflow-x: auto;"><code>&lt;!-- Clean, semantic content layout --&gt;
+&lt;main&gt;
+    &lt;h1&gt;Playing Together&lt;/h1&gt;
+    
+    &lt;!-- Featured hero image --&gt;
+    &lt;figure&gt;
+        &lt;img src="images/bros.jpg" alt="Brothers playing music together" class="content-image-large"&gt;
+    &lt;/figure&gt;
+    
+    &lt;p&gt;Todd was encouraging initially...&lt;/p&gt;
+    
+    &lt;!-- Contextual image between paragraphs --&gt;
+    &lt;figure&gt;
+        &lt;img src="images/hand_position.jpg" alt="Proper hand positioning" class="content-image-medium"&gt;
+        &lt;figcaption&gt;Proper hand positioning is essential for collaborative playing&lt;/figcaption&gt;
+    &lt;/figure&gt;
+    
+    &lt;p&gt;He also showed me the proper hand position...&lt;/p&gt;
+&lt;/main&gt;</code></pre>
+</div>
+
+<h4 style="color: #4d1979; font-size: 1.1em; margin-top: 1rem; margin-bottom: 0.5rem;">Content Image CSS Classes</h4>
+<p>Create responsive image classes for different content needs:</p>
+
+<div class="code-container">
+<button class="copy-button" onclick="copyCode(this)">Copy</button>
+<pre style="background-color: #f5f5f5; padding: 1rem; border-radius: 3px; font-family: monospace; font-size: 0.9em; overflow-x: auto;"><code>/* Content image sizing system */
+.content-image-small {
+  max-width: 300px;
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  margin: 30px auto;
+  display: block;
+}
+
+.content-image-medium {
+  max-width: 500px;
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  margin: 30px auto;
+  display: block;
+}
+
+.content-image-large {
+  max-width: 700px;
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  margin: 30px auto;
+  display: block;
+}
+
+/* Semantic figure styling */
+figure {
+  margin: 30px 0;
+  text-align: center;
+}
+
+figcaption {
+  font-size: 0.9em;
+  color: #666;
+  font-style: italic;
+  margin-top: 10px;
+  line-height: 1.4;
+}</code></pre>
+</div>
+
+<h4 style="color: #4d1979; font-size: 1.1em; margin-top: 1rem; margin-bottom: 0.5rem;">Mobile Optimization</h4>
+
+<div class="code-container">
+<button class="copy-button" onclick="copyCode(this)">Copy</button>
+<pre style="background-color: #f5f5f5; padding: 1rem; border-radius: 3px; font-family: monospace; font-size: 0.9em; overflow-x: auto;"><code>/* Mobile-specific adjustments */
+@media (max-width: 480px) {
+    .content-image-small {
+        max-width: 250px;
+        margin: 20px auto;
+    }
+    
+    .content-image-medium,
+    .content-image-large {
+        max-width: 100%;
+        margin: 20px auto;
+    }
+    
+    figure {
+        margin: 20px 0;
+    }
+    
+    figcaption {
+        font-size: 0.8em;
+        padding: 0 10px;
+    }
+}
+
+/* Desktop scaling */
+@media (min-width: 1200px) {
+    .content-image-small {
+        max-width: 400px;
+    }
+    
+    .content-image-medium {
+        max-width: 600px;
+    }
+    
+    .content-image-large {
+        max-width: 800px;
+    }
+}</code></pre>
+</div>
+
+<div style="background-color: #d4edda; padding: 1rem; border-left: 4px solid #28a745; margin: 1rem 0;">
+<h3 style="color: #155724; font-size: 1.1em; margin-top: 0; margin-bottom: 0.5rem;">✅ Benefits of This Approach</h3>
+<ul style="margin: 0.5rem 0; padding-left: 1.5rem;">
+<li><strong>Natural reading flow:</strong> Images serve as visual breaks</li>
+<li><strong>True responsiveness:</strong> Works perfectly on all screen sizes</li>
+<li><strong>Semantic HTML:</strong> Proper figure and figcaption structure</li>
+<li><strong>Accessibility:</strong> Screen readers follow logical content order</li>
+<li><strong>Maintainable code:</strong> Simple CSS classes, no complex layouts</li>
+</ul>
+</div>
+
+<h4 style="color: #4d1979; font-size: 1.1em; margin-top: 1rem; margin-bottom: 0.5rem;">Image Size Guidelines</h4>
+<ul style="margin: 1rem 0; padding-left: 1.5rem;">
+<li><strong>Large:</strong> Hero images, main illustrations that establish context</li>
+<li><strong>Medium:</strong> Supporting visuals, technique demonstrations</li>
+<li><strong>Small:</strong> Secondary images, album covers, portraits</li>
+</ul>
+
+<h3 style="color: #4d1979; font-size: 1.2em; margin-top: 1.5rem; margin-bottom: 1rem;">Step 7: Test Your Images</h3>
+
+<div style="background-color: #f9f9f9; padding: 1rem; border-left: 4px solid #4caf50; margin: 1rem 0;">
+<h3 style="color: #2e7d32; font-size: 1.1em; margin-top: 0; margin-bottom: 0.5rem;">Quick Test Checklist</h3>
+<ol style="margin: 0.5rem 0; padding-left: 1.5rem;">
+<li><strong>Resize your browser:</strong> Do images scale smoothly?</li>
+<li><strong>Check thumbnail alignment:</strong> Are all feature cards the same height?</li>
+<li><strong>Test content images:</strong> Do they flow naturally between paragraphs?</li>
+<li><strong>Test on mobile:</strong> Use developer tools to simulate mobile devices</li>
+<li><strong>Check accessibility:</strong> Are captions and alt text descriptive?</li>
+<li><strong>Look for overflow:</strong> Do any images break out of their containers?</li>
+</ol>
+</div>
+
+<h3 style="color: #4d1979; font-size: 1.2em; margin-top: 1.5rem; margin-bottom: 1rem;">Performance Tips</h3>
+
+<h4 style="color: #4d1979; font-size: 1.1em; margin-top: 1rem; margin-bottom: 0.5rem;">Optimize Your Images</h4>
+<ul style="margin: 1rem 0; padding-left: 1.5rem;">
+<li><strong>Resize before uploading:</strong> Don't use 3000px images for 300px spaces</li>
+<li><strong>Use appropriate formats:</strong> JPG for photos, PNG for graphics</li>
+<li><strong>Compress images:</strong> Use tools like TinyPNG or ImageOptim</li>
+<li><strong>Add alt text:</strong> Important for accessibility and SEO</li>
+</ul>
+
+<div class="code-container">
+<button class="copy-button" onclick="copyCode(this)">Copy</button>
+<pre style="background-color: #f5f5f5; padding: 1rem; border-radius: 3px; font-family: monospace; font-size: 0.9em; overflow-x: auto;"><code>&lt;!-- Good image practices --&gt;
+&lt;img src="optimized-image.jpg" 
+     class="feature-thumbnail"
+     alt="Descriptive text about the image"&gt;</code></pre>
+</div>
+
+<h3 style="color: #4d1979; font-size: 1.2em; margin-top: 1.5rem; margin-bottom: 1rem;">Key Takeaways</h3>
+<ul style="margin: 1rem 0; padding-left: 1.5rem;">
+<li><strong>Always make images responsive:</strong> <code style="background-color: #f5f5f5; padding: 2px 4px; border-radius: 3px; font-family: monospace;">max-width: 100%; height: auto;</code></li>
+<li><strong>Use consistent thumbnails:</strong> Square images create better layouts</li>
+<li><strong>Replace inline attributes:</strong> Use CSS classes instead of <code style="background-color: #f5f5f5; padding: 2px 4px; border-radius: 3px; font-family: monospace;">width="100%"</code></li>
+<li><strong>Use free tools:</strong> Canva and others make thumbnail creation easy</li>
+<li><strong>Test thoroughly:</strong> Check images on multiple screen sizes</li>
+</ul>
+
+<div style="background-color: #f9f9f9; padding: 1rem; border-left: 4px solid #4caf50; margin: 1rem 0;">
+<h3 style="color: #2e7d32; font-size: 1.1em; margin-top: 0; margin-bottom: 0.5rem;">Next Steps</h3>
+<p>Perfect! Your images now work beautifully across all devices. Ready to tackle typography? Check out the <a href="responsive-typography.html">Typography Tutorial</a> next.</p>
+</div>
+
+<footer style="text-align: center; margin-top: 2rem; padding-top: 2rem; border-top: 1px solid #ddd;">
+  <p><a href="code-snippets.html">← Back to Tutorial Hub</a> | <a href="responsive-navigation.html">← Previous: Navigation</a> | <a href="responsive-typography.html">Next: Typography →</a></p>
+  <p style="margin-top: 1rem; font-size: 0.9em; color: #666;">
+    💡 <strong>Tip:</strong> Return to D2L to continue with the next video, then come back here for more code snippets.
+  </p>
+</footer>
+
+</div>
+
+<script>
+function copyCode(button) {
+  const codeContainer = button.parentElement;
+  const codeElement = codeContainer.querySelector('code');
+  const textToCopy = codeElement.textContent;
+  
+  const textarea = document.createElement('textarea');
+  textarea.value = textToCopy;
+  document.body.appendChild(textarea);
+  
+  textarea.select();
+  textarea.setSelectionRange(0, 99999);
+  
+  try {
+    document.execCommand('copy');
+    
+    const originalText = button.textContent;
+    button.textContent = 'Copied!';
+    button.classList.add('copied');
+    
+    setTimeout(() => {
+      button.textContent = originalText;
+      button.classList.remove('copied');
+    }, 2000);
+    
+  } catch (err) {
+    console.error('Failed to copy text: ', err);
+    alert('Copy failed. Please select and copy manually.');
+  }
+  
+  document.body.removeChild(textarea);
+}
+</script>
+
+</body></html>

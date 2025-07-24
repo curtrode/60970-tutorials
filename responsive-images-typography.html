@@ -50,115 +50,115 @@ pre {
 <h2 style="color: #4d1979; font-size: 1.3em; margin-top: 1.5rem; margin-bottom: 1rem;">Tutorial 2: Responsive Images & Typography</h2>
 
 <h3 style="color: #4d1979; font-size: 1.2em; margin-top: 1.5rem; margin-bottom: 1rem;">Overview</h3>
-<p>Learn how to make images and text that look great on any device. This tutorial focuses on practical techniques that you can immediately apply to enhance your existing website.</p>
-
-<h3 style="color: #4d1979; font-size: 1.2em; margin-top: 1.5rem; margin-bottom: 1rem;">Learning Objectives</h3>
-<p>By the end of this tutorial, you will be able to:</p>
-<ul style="margin: 1rem 0; padding-left: 1.5rem;">
-<li>Make images that automatically resize for different screens</li>
-<li>Create fluid typography that scales beautifully</li>
-<li>Optimize images for better performance</li>
-<li>Apply these techniques to your existing layouts</li>
-</ul>
+<p>Master responsive design fundamentals with two focused tutorials. Learn how to make images and text that look great on any device.</p>
 
 <div style="background-color: #f9f9f9; padding: 1rem; border-left: 4px solid #2196f3; margin: 1rem 0;">
-<h3 style="color: #1976d2; font-size: 1.1em; margin-top: 0; margin-bottom: 0.5rem;">What You Need</h3>
-<ul style="margin: 0.5rem 0; padding-left: 1.5rem;">
-<li>Your existing website with images and text</li>
-<li>A text editor and web browser</li>
-<li>Basic knowledge of HTML and CSS</li>
+<h3 style="color: #1976d2; font-size: 1.1em; margin-top: 0; margin-bottom: 0.5rem;">Choose Your Focus</h3>
+<p>These tutorials work independently - tackle them in any order, or do both for complete responsive mastery!</p>
+</div>
+
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin: 2rem 0;">
+
+<div style="border: 1px solid #ddd; border-radius: 8px; padding: 1.5rem; background: white;">
+<h3 style="color: #4d1979; font-size: 1.2em; margin-top: 0; margin-bottom: 1rem;">🖼️ Responsive Images</h3>
+<p><strong>What you'll learn:</strong></p>
+<ul style="margin: 1rem 0; padding-left: 1.5rem; font-size: 0.9em;">
+<li>Make all images responsive with one CSS rule</li>
+<li>Create consistent square thumbnails</li>
+<li>Use free tools like Canva for quick thumbnails</li>
+<li>Replace inline width attributes with CSS classes</li>
+<li>Optimize images for better performance</li>
 </ul>
+<p><strong>Perfect for:</strong> Feature cards, galleries, hero images</p>
+<div style="text-align: center; margin-top: 1.5rem;">
+<a href="responsive-images.html" style="background: #007bff; color: white; padding: 0.8rem 1.5rem; text-decoration: none; border-radius: 5px; font-weight: 500;">Start Images Tutorial →</a>
+</div>
 </div>
 
-<h3 style="color: #4d1979; font-size: 1.2em; margin-top: 1.5rem; margin-bottom: 1rem;">Part 1: Responsive Images</h3>
-
-<h4 style="color: #4d1979; font-size: 1.1em; margin-top: 1rem; margin-bottom: 0.5rem;">The Essential Rule</h4>
-<p>Add this to your CSS to make ALL images responsive:</p>
-
-<div class="code-container">
-<button class="copy-button" onclick="copyCode(this)">Copy</button>
-<pre style="background-color: #f5f5f5; padding: 1rem; border-radius: 3px; font-family: monospace; font-size: 0.9em; overflow-x: auto;"><code>/* Make all images responsive by default */
-img {
-    max-width: 100%;
-    height: auto;
-}</code></pre>
+<div style="border: 1px solid #ddd; border-radius: 8px; padding: 1.5rem; background: white;">
+<h3 style="color: #4d1979; font-size: 1.2em; margin-top: 0; margin-bottom: 1rem;">📝 Responsive Typography</h3>
+<p><strong>What you'll learn:</strong></p>
+<ul style="margin: 1rem 0; padding-left: 1.5rem; font-size: 0.9em;">
+<li>Use the modern clamp() function for fluid text</li>
+<li>Optimize text for better readability</li>
+<li>Scale headings, body text, and navigation</li>
+<li>Apply responsive spacing and margins</li>
+<li>Test typography across all screen sizes</li>
+</ul>
+<p><strong>Perfect for:</strong> Headlines, body text, navigation menus</p>
+<div style="text-align: center; margin-top: 1.5rem;">
+<a href="responsive-typography.html" style="background: #28a745; color: white; padding: 0.8rem 1.5rem; text-decoration: none; border-radius: 5px; font-weight: 500;">Start Typography Tutorial →</a>
+</div>
 </div>
 
-<p><strong>What this does:</strong></p>
+</div>
+
+<div style="background-color: #fff3cd; padding: 1rem; border-left: 4px solid #ffc107; margin: 2rem 0;">
+<h3 style="color: #856404; font-size: 1.1em; margin-top: 0; margin-bottom: 0.5rem;">💡 Recommended Approach</h3>
+<p style="margin: 0.5rem 0;"><strong>New to responsive design?</strong> Start with <a href="responsive-images.html">Images</a> first - it has immediate visual impact and builds confidence.</p>
+<p style="margin: 0.5rem 0;"><strong>Have image basics down?</strong> Jump to <a href="responsive-typography.html">Typography</a> to master modern CSS techniques like clamp().</p>
+</div>
+
+<h3 style="color: #4d1979; font-size: 1.2em; margin-top: 1.5rem; margin-bottom: 1rem;">Combined Learning Objectives</h3>
+<p>By completing both tutorials, you will be able to:</p>
 <ul style="margin: 1rem 0; padding-left: 1.5rem;">
-<li><code style="background-color: #f5f5f5; padding: 2px 4px; border-radius: 3px; font-family: monospace;">max-width: 100%</code> - Image never gets wider than its container</li>
-<li><code style="background-color: #f5f5f5; padding: 2px 4px; border-radius: 3px; font-family: monospace;">height: auto</code> - Height adjusts automatically to keep proportions</li>
+<li>Create fully responsive images that scale beautifully</li>
+<li>Build consistent thumbnail systems for professional layouts</li>
+<li>Implement fluid typography that adapts to any screen size</li>
+<li>Use modern CSS techniques like clamp() and object-fit</li>
+<li>Optimize content for both performance and accessibility</li>
+<li>Test and validate your responsive designs effectively</li>
 </ul>
 
-<h4 style="color: #4d1979; font-size: 1.1em; margin-top: 1rem; margin-bottom: 0.5rem;">Enhanced Images for Feature Cards</h4>
-<p>For gallery and feature card images, create consistent thumbnails for better visual harmony:</p>
+<div style="background-color: #f9f9f9; padding: 1rem; border-left: 4px solid #4caf50; margin: 1rem 0;">
+<h3 style="color: #2e7d32; font-size: 1.1em; margin-top: 0; margin-bottom: 0.5rem;">After Completing Both Tutorials</h3>
+<p>Your website will have professional-quality responsive design! Ready for the final step? Check out <a href="validation-accessibility.html">Tutorial 3: Validation & Accessibility</a> to ensure your site works perfectly for everyone.</p>
+</div>
 
-<div class="code-container">
-<button class="copy-button" onclick="copyCode(this)">Copy</button>
-<pre style="background-color: #f5f5f5; padding: 1rem; border-radius: 3px; font-family: monospace; font-size: 0.9em; overflow-x: auto;"><code>/* Consistent square thumbnails - recommended approach */
-.feature-thumbnail, .gallery-thumbnail {
-    width: 100%;
-    aspect-ratio: 1 / 1; /* Creates perfect squares */
-    object-fit: cover;
-    border-radius: 5px;
+<footer style="text-align: center; margin-top: 2rem; padding-top: 2rem; border-top: 1px solid #ddd;">
+  <p><a href="code-snippets.html">← Back to Tutorial Hub</a> | <a href="responsive-navigation.html">← Previous: Navigation</a> | <a href="validation-accessibility.html">Next: Accessibility →</a></p>
+  <p style="margin-top: 1rem; font-size: 0.9em; color: #666;">
+    💡 <strong>Tip:</strong> Return to D2L to continue with the next video, then come back here for more code snippets.
+  </p>
+</footer>
+
+</div>
+
+<script>
+function copyCode(button) {
+  const codeContainer = button.parentElement;
+  const codeElement = codeContainer.querySelector('code');
+  const textToCopy = codeElement.textContent;
+  
+  const textarea = document.createElement('textarea');
+  textarea.value = textToCopy;
+  document.body.appendChild(textarea);
+  
+  textarea.select();
+  textarea.setSelectionRange(0, 99999);
+  
+  try {
+    document.execCommand('copy');
+    
+    const originalText = button.textContent;
+    button.textContent = 'Copied!';
+    button.classList.add('copied');
+    
+    setTimeout(() => {
+      button.textContent = originalText;
+      button.classList.remove('copied');
+    }, 2000);
+    
+  } catch (err) {
+    console.error('Failed to copy text: ', err);
+    alert('Copy failed. Please select and copy manually.');
+  }
+  
+  document.body.removeChild(textarea);
 }
+</script>
 
-/* Alternative for older browsers */
-.feature-thumbnail, .gallery-thumbnail {
-    width: 100%;
-    height: 200px; /* Fixed height for consistency */
-    object-fit: cover;
-    border-radius: 5px;
-}
-
-/* Responsive sizing */
-@media (max-width: 480px) {
-    .feature-thumbnail, .gallery-thumbnail {
-        height: 150px;
-    }
-}</code></pre>
-</div>
-
-<h4 style="color: #4d1979; font-size: 1.1em; margin-top: 1rem; margin-bottom: 0.5rem;">Why Consistent Thumbnails Matter</h4>
-<p><strong>Benefits of uniform thumbnail sizes:</strong></p>
-<ul style="margin: 1rem 0; padding-left: 1.5rem;">
-<li><strong>Predictable layouts:</strong> No more broken grids from different image sizes</li>
-<li><strong>Better visual harmony:</strong> Creates clean, professional appearance</li>
-<li><strong>Easier responsive design:</strong> Consistent behavior across all screen sizes</li>
-<li><strong>Improved loading performance:</strong> Browser can calculate layout immediately</li>
-</ul>
-
-<div style="background-color: #fff3cd; padding: 1rem; border-left: 4px solid #ffc107; margin: 1rem 0;">
-<h3 style="color: #856404; font-size: 1.1em; margin-top: 0; margin-bottom: 0.5rem;">💡 Pro Tip: Thumbnail Strategy</h3>
-<p style="margin: 0.5rem 0;">Instead of using images with different aspect ratios (rectangular, square, wide), create consistent square thumbnails. This eliminates layout shifts and creates a more polished, professional appearance.</p>
-</div>
-
-<h4 style="color: #4d1979; font-size: 1.1em; margin-top: 1rem; margin-bottom: 0.5rem;">HTML Updates for Thumbnails</h4>
-<p>Add CSS classes to your images for better control:</p>
-
-<div class="code-container">
-<button class="copy-button" onclick="copyCode(this)">Copy</button>
-<pre style="background-color: #f5f5f5; padding: 1rem; border-radius: 3px; font-family: monospace; font-size: 0.9em; overflow-x: auto;"><code>&lt;!-- Update your HTML to use thumbnail classes --&gt;
-&lt;div class="features"&gt;
-  &lt;a href="page.html" class="feature-link"&gt;
-    &lt;div&gt;
-      &lt;img src="images/photo.jpg" class="feature-thumbnail" alt="Description"&gt;
-      &lt;h3&gt;Feature Title&lt;/h3&gt;
-    &lt;/div&gt;
-  &lt;/a&gt;
-&lt;/div&gt;
-
-&lt;div class="gallery"&gt;
-  &lt;div&gt;&lt;img src="images/gallery1.jpg" class="gallery-thumbnail" alt="Gallery item"&gt;&lt;/div&gt;
-  &lt;div&gt;&lt;img src="images/gallery2.jpg" class="gallery-thumbnail" alt="Gallery item"&gt;&lt;/div&gt;
-&lt;/div&gt;</code></pre>
-</div>
-
-<div style="background-color: #e7f3ff; padding: 1rem; border-left: 4px solid #2196f3; margin: 1rem 0;">
-<h3 style="color: #1976d2; font-size: 1.1em; margin-top: 0; margin-bottom: 0.5rem;">⚠️ Important: Replace Inline Width Attributes</h3>
-<p style="margin: 0.5rem 0;">If your images currently use <code style="background-color: #f5f5f5; padding: 2px 4px; border-radius: 3px; font-family: monospace;">width="100%"</code> attributes in the HTML, replace them with CSS classes for better control and consistency.</p>
-
-<div class="code-container">
+</body></html>
 <button class="copy-button" onclick="copyCode(this)">Copy</button>
 <pre style="background-color: #f5f5f5; padding: 1rem; border-radius: 3px; font-family: monospace; font-size: 0.9em; overflow-x: auto;"><code>&lt;!-- BEFORE: Using inline width (avoid this) --&gt;
 &lt;img src="images/photo.jpg" width="100%" alt="Description"&gt;
