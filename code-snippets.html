@@ -136,21 +136,57 @@
         </article>
 
         <article class="tutorial-card">
-            <h3>Tutorial 2: Responsive Images & Typography</h3>
+            <h3>Tutorial 2A: Responsive Images</h3>
             <div>
                 <span class="badge difficulty-beginner">Beginner</span>
                 <span class="badge">Images</span>
-                <span class="badge">Typography</span>
+                <span class="badge">Thumbnails</span>
             </div>
-            <p>Master responsive images and fluid typography that scales beautifully across devices. Learn modern CSS techniques for flexible media and readable text.</p>
+            <p>Master responsive images, create consistent thumbnails, and learn modern image layouts. Includes feature card design and content page strategies.</p>
             <p><strong>What you'll learn:</strong></p>
             <ul>
                 <li>Responsive image techniques</li>
-                <li>Fluid typography with CSS clamp()</li>
-                <li>Art direction with picture element</li>
-                <li>Performance optimization</li>
+                <li>Consistent square thumbnails</li>
+                <li>Clean feature card design</li>
+                <li>Modern content page layouts</li>
+                <li>Free thumbnail creation tools</li>
             </ul>
-            <p><a href="responsive-images-typography.html">Start Tutorial →</a></p>
+            <p><a href="responsive-images.html">Start Tutorial →</a></p>
+        </article>
+
+        <article class="tutorial-card">
+            <h3>Tutorial 2B: Responsive Typography</h3>
+            <div>
+                <span class="badge difficulty-beginner">Beginner</span>
+                <span class="badge">Typography</span>
+                <span class="badge">CSS clamp()</span>
+            </div>
+            <p>Create fluid typography that scales beautifully across devices using modern CSS techniques. Learn clamp(), readability optimization, and responsive spacing.</p>
+            <p><strong>What you'll learn:</strong></p>
+            <ul>
+                <li>Fluid typography with CSS clamp()</li>
+                <li>Responsive spacing patterns</li>
+                <li>Typography readability rules</li>
+                <li>Advanced scaling techniques</li>
+            </ul>
+            <p><a href="responsive-typography.html">Start Tutorial →</a></p>
+        </article>
+
+        <article class="tutorial-card">
+            <h3>Tutorial 2: Images & Typography Overview</h3>
+            <div>
+                <span class="badge difficulty-beginner">Overview</span>
+                <span class="badge">Complete Guide</span>
+            </div>
+            <p>Choose your focus or see the complete picture. This overview helps you decide between the focused tutorials or tackle both for complete mastery.</p>
+            <p><strong>What you'll find:</strong></p>
+            <ul>
+                <li>Guided tutorial selection</li>
+                <li>Combined learning objectives</li>
+                <li>Best practices overview</li>
+                <li>Progress tracking</li>
+            </ul>
+            <p><a href="responsive-images-typography.html">View Overview →</a></p>
         </article>
 
         <article class="tutorial-card">
@@ -174,7 +210,7 @@
 
     <section style="background: #fff3cd; padding: 1.5rem; border-radius: 8px; margin: 2rem 0; border-left: 4px solid #ffc107;">
         <h3 style="color: #856404; margin-top: 0;">💡 Perfect for Students Starting with Existing Sites</h3>
-        <p style="color: #856404; margin-bottom: 0;">These tutorials are designed for students who already have a basic website structure (like the demo site). You'll enhance what you already have rather than starting from scratch!</p>
+        <p style="color: #856404; margin-bottom: 0;">These tutorials are designed for students who already have a basic website structure (like the demo site). You'll enhance what you already have rather than starting from scratch! <strong>New:</strong> Tutorial 2 is now split into focused sections - tackle images or typography separately, or do both!</p>
     </section>
 
     <section class="quick-reference">
@@ -240,22 +276,60 @@ img {
 }</pre>
         </div>
 
-        <p><strong>Step 2:</strong> For feature cards and gallery images, add:</p>
+        <p><strong>Step 2:</strong> Create consistent thumbnails with CSS classes</p>
         <div class="code-snippet">
             <button class="copy-button" onclick="copyToClipboard(this)">Copy</button>
-<pre>/* Enhanced image styling for cards */
-.features img, .gallery img {
+<pre>/* Consistent square thumbnails */
+.feature-thumbnail, .gallery-thumbnail {
     width: 100%;
-    height: 150px;
+    aspect-ratio: 1 / 1;
     object-fit: cover;
     border-radius: 5px;
 }
 
-/* For larger gallery images on desktop */
-@media (min-width: 768px) {
-    .gallery img {
-        height: 200px;
-    }
+/* Alternative for older browsers */
+.feature-thumbnail, .gallery-thumbnail {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 5px;
+}</pre>
+        </div>
+
+        <p><strong>Step 3:</strong> Content page images (between paragraphs)</p>
+        <div class="code-snippet">
+            <button class="copy-button" onclick="copyToClipboard(this)">Copy</button>
+<pre>/* Content image sizing system */
+.content-image-small {
+  max-width: 300px;
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  margin: 30px auto;
+  display: block;
+}
+
+.content-image-medium {
+  max-width: 500px;
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  margin: 30px auto;
+  display: block;
+}
+
+figure {
+  margin: 30px 0;
+  text-align: center;
+}
+
+figcaption {
+  font-size: 0.9em;
+  color: #666;
+  font-style: italic;
+  margin-top: 10px;
 }</pre>
         </div>
 
